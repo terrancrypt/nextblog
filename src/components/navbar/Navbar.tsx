@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react'
+import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
 
 
 const links = [
@@ -41,8 +42,9 @@ const Navbar = () => {
         <header className='h-[100px] flex justify-between items-center'>
             <Link href='/' className='font-bold text-[22px]'>NextBlog</Link>
             <div className='flex items-center gap-5'>
+                <DarkModeToggle/>
                 {links.map((link) => (
-                    <Link key={link.id} href={link.url} >{link.title}</Link>
+                    <Link key={link.id} href={link.url}>{link.title}</Link>
                 ))}
                 <button className='p-[5px] bg-[#194c33] text-white rounded hover:bg-[#53c28b] transition-all'>Logout</button>
             </div>
