@@ -3,6 +3,7 @@ import './globals.css'
 import { Inter, Roboto } from 'next/font/google'
 import Footer from '@/components/footer/Footer'
 import { ThemeProvider } from '@/context/ThemeContext'
+import Head from 'next/head'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,6 +19,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <meta
+          http-equiv="Content-Security-Policy"
+          content="connect-src 'self' vitals.vercel-insights.com"
+        />
+      </Head>
       <body className={inter.className}>
         <ThemeProvider>
           <div className='container py-[30px] min-h-full flex flex-col justify-between'>
